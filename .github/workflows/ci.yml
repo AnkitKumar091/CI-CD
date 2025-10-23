@@ -1,13 +1,11 @@
-name: Node.js CI
+name: Node.js CI + Deploy
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  test:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +22,7 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Simulate deployment
+        run: echo "🚀 Deploying app to production server..."
+
